@@ -1,0 +1,12 @@
+*Create ApiResponses trait
+
+*Look up factories, fakerdata and seeder
+
+*Api setup
+
+*Api Version setup using the routeServiceProvider
+
+* Api login authintication with response, sanctum applied, route secure middleware 
+
+___commands____
+php artisan make:controller Api\V1\TicketController --resource --model=Ticket --requests  //all in one
