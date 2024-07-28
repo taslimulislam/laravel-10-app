@@ -17,7 +17,6 @@ class AuthApiController extends Controller
 
     public function login(LoginUserRequest $request)
     {
-        // return 123;
         $request->validated($request->all());
 
         if (!Auth::attempt($request->only('email', 'password'))) {
@@ -29,8 +28,18 @@ class AuthApiController extends Controller
         return $this->ok(
             'Authenticated',
             [
-                'token' => $user->createToken('Api token for ' . $user->email)->plainTextToken
+                'token' => $user->createToken(
+                    'Api token for ' . $user->email,
+                    ['*'], // abilities experation point
+                    now()->addMonth() //experation duration
+                )->plainTextToken
             ]
         );
+    }
+
+    public function logout(Request $request)
+    {
+          $request->user()->currentAccessToken()->delete();
+          return $this->ok('');
     }
 }
