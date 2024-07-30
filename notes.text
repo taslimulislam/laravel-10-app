@@ -8,5 +8,9 @@
 
 * Api login authintication with response, sanctum applied, route secure middleware 
 
+* Api logout
+
+* Organize response payload (data list in json)
+
 ___commands____
 php artisan make:controller Api\V1\TicketController --resource --model=Ticket --requests  //all in one
