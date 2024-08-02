@@ -12,7 +12,7 @@
 
 * Organize response payload (data list in json)
 
-* condition in api data view
+* condition in api data view new change
 
 ___commands____
 php artisan make:controller Api\V1\TicketController --resource --model=Ticket --requests  //all in one
